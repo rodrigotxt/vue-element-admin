@@ -37,8 +37,8 @@ export default {
     'menu1-2-2': 'Menu 1-2-2',
     'menu1-3': 'Menu 1-3',
     menu2: 'Menu 2',
-    Table: 'Table',
-    dynamicTable: 'Dynamic Table',
+    Table: 'Tabela',
+    dynamicTable: 'Tabela Dinâmica',
     dragTable: 'Drag Table',
     inlineEditTable: 'Inline Edit',
     complexTable: 'Complex Table',
@@ -46,9 +46,9 @@ export default {
     customTreeTable: 'Custom TreeTable',
     tab: 'Tab',
     form: 'Form',
-    createArticle: 'Create Article',
-    editArticle: 'Edit Article',
-    articleList: 'Article List',
+    createArticle: 'Criar Artigo',
+    editArticle: 'Editar Artigo',
+    articleList: 'Lista de Artigos',
     errorPages: 'Error Pages',
     page401: '401',
     page404: '404',
@@ -60,10 +60,10 @@ export default {
     zip: 'Zip',
     pdf: 'PDF',
     exportZip: 'Export Zip',
-    theme: 'Theme',
-    clipboardDemo: 'Clipboard',
+    theme: 'Tema',
+    clipboardDemo: 'Área de Transferência',
     i18n: 'I18n',
-    externalLink: 'External Link'
+    externalLink: 'Link Externo'
   },
   navbar: {
     logOut: 'Log Out',
@@ -108,26 +108,26 @@ export default {
     dynamicTips2: 'Not fixed header, sorted by click order',
     dragTips1: 'The default order',
     dragTips2: 'The after dragging order',
-    title: 'Title',
+    title: 'Título',
     importance: 'Imp',
-    type: 'Type',
+    type: 'Tipo',
     remark: 'Remark',
     search: 'Search',
-    add: 'Add',
-    export: 'Export',
+    add: 'Inserir',
+    export: 'Exportar',
     reviewer: 'reviewer',
     id: 'ID',
-    date: 'Date',
-    author: 'Author',
+    date: 'Data',
+    author: 'Autor',
     readings: 'Readings',
     status: 'Status',
-    actions: 'Actions',
-    edit: 'Edit',
-    publish: 'Publish',
-    draft: 'Draft',
+    actions: 'Ações',
+    edit: 'Editar',
+    publish: 'Publicar',
+    draft: 'Rascunho',
     delete: 'Delete',
-    cancel: 'Cancel',
-    confirm: 'Confirm'
+    cancel: 'Cancelar',
+    confirm: 'Confirmar'
   },
   errorLog: {
     tips: 'Please click the bug icon in the upper right corner',
@@ -147,14 +147,14 @@ export default {
     tips: 'Here we use window.print() to implement the feature of downloading pdf.'
   },
   theme: {
-    change: 'Change Theme',
+    change: 'Mudar Tema',
     documentation: 'Theme documentation',
     tips: 'Tips: It is different from the theme-pick on the navbar is two different skinning methods, each with different application scenarios. Refer to the documentation for details.'
   },
   tagsView: {
-    refresh: 'Refresh',
-    close: 'Close',
-    closeOthers: 'Close Others',
-    closeAll: 'Close All'
+    refresh: 'Atualizar',
+    close: 'Fechar',
+    closeOthers: 'Fechar Outras',
+    closeAll: 'Fechar Tudo'
   }
 }
