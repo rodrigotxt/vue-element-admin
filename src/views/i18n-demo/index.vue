@@ -102,7 +102,7 @@ export default {
     if (!this.$i18n.getLocaleMessage('en')[viewName]) {
       this.$i18n.mergeLocaleMessage('en', local.en)
       this.$i18n.mergeLocaleMessage('zh', local.zh)
-      this.$i18n.mergeLocaleMessage('es', local.es)
+      this.$i18n.mergeLocaleMessage('br', local.br)
     }
     this.setOptions() // set default select options
   },

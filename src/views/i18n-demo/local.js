@@ -59,5 +59,25 @@ export default {
       two: 'Two',
       three: 'Three'
     }
+  },
+  br: {
+    i18nView: {
+      title: 'Trocar Idioma',
+      note: 'A internacionalização do projeto é baseada em vue-i18n',
+      datePlaceholder: 'Selecione um dia',
+      selectPlaceholder: 'Selecione',
+      tableDate: 'tableDate',
+      tableName: 'tableName',
+      tableAddress: 'tableAddress',
+      default: 'default:',
+      primary: 'primary',
+      success: 'success',
+      info: 'info',
+      warning: 'warning',
+      danger: 'danger',
+      one: 'Um',
+      two: 'Dois',
+      three: 'Três'
+    }
   }
 }
