@@ -52,14 +52,14 @@ export default {
     errorPages: 'Error Pages',
     page401: '401',
     page404: '404',
-    errorLog: 'Error Log',
+    errorLog: 'Log de Erro',
     excel: 'Excel',
     exportExcel: 'Export Excel',
     selectExcel: 'Export Selected',
     uploadExcel: 'Upload Excel',
     zip: 'Zip',
     pdf: 'PDF',
-    exportZip: 'Export Zip',
+    exportZip: 'Exportar Zip',
     theme: 'Tema',
     clipboardDemo: 'Área de Transferência',
     i18n: 'I18n',
@@ -86,13 +86,13 @@ export default {
     github: 'Github Repository'
   },
   permission: {
-    roles: 'Your roles',
-    switchRoles: 'Switch roles',
+    roles: 'Suas regras',
+    switchRoles: 'Mudar regras',
     tips: 'In some cases it is not suitable to use v-permission, such as element Tab component or el-table-column and other asynchronous rendering dom cases which can only be achieved by manually setting the v-if.'
   },
   guide: {
     description: 'The guide page is useful for some people who entered the project for the first time. You can briefly introduce the features of the project. Demo is based on ',
-    button: 'Show Guide'
+    button: 'Mostrar Guia'
   },
   components: {
     documentation: 'Documentação',
@@ -135,12 +135,12 @@ export default {
     documentation: 'Document introduction'
   },
   excel: {
-    export: 'Export',
+    export: 'Exportar',
     selectedExport: 'Export Selected Items',
     placeholder: 'Please enter the file name(default excel-list)'
   },
   zip: {
-    export: 'Export',
+    export: 'Exportar',
     placeholder: 'Please enter the file name(default file)'
   },
   pdf: {
