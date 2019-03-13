@@ -12,6 +12,7 @@ import chartsRouter from './modules/charts'
 import tableRouter from './modules/table'
 import treeTableRouter from './modules/tree-table'
 import nestedRouter from './modules/nested'
+import cadastrosRouter from './modules/cadastros'
 
 /** note: sub-menu only appear when children.length>=1
  *  detail see  https://panjiachen.github.io/vue-element-admin-site/guide/essentials/router-and-nav.html
@@ -32,7 +33,7 @@ import nestedRouter from './modules/nested'
     breadcrumb: false            if false, the item will hidden in breadcrumb(default is true)
     affix: true                  if true, the tag will affix in the tags-view
   }
-**/
+  **/
 export const constantRouterMap = [
   {
     path: '/redirect',
@@ -75,6 +76,22 @@ export const constantRouterMap = [
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
         meta: { title: 'dashboard', icon: 'dashboard', noCache: true, affix: true }
+      }
+    ]
+  },
+
+  cadastrosRouter,
+
+  {
+    path: '/clientes',
+    component: Layout,
+    // redirect: '/documentation/index',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/clientes/index'),
+        name: 'Clientes',
+        meta: { title: 'Clientes', icon: 'documentation', affix: true }
       }
     ]
   },
