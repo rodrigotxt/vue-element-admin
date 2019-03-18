@@ -80,21 +80,29 @@ export const constantRouterMap = [
     ]
   },
 
-  cadastrosRouter,
-
   {
     path: '/clientes',
     component: Layout,
-    // redirect: '/documentation/index',
+    redirect: '/clientes/index',
+    name: 'Clientes',
+    meta: { title: 'Clientes', icon: 'peoples', affix: true },
     children: [
       {
         path: 'index',
         component: () => import('@/views/clientes/index'),
-        name: 'Clientes',
-        meta: { title: 'Clientes', icon: 'documentation', affix: true }
+        meta: { title: 'Clientes', icon: 'peoples', affix: true }
+      },
+      {
+        path: 'add',
+        component: () => import('@/views/clientes/add'),
+        meta: { title: 'Novo Cliente', icon: 'peoples', affix: true },
+        hidden: true
       }
     ]
   },
+
+  cadastrosRouter,
+
   {
     path: '/documentation',
     component: Layout,

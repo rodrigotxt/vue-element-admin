@@ -19,6 +19,8 @@ import './errorLog' // error log
 import './permission' // permission control
 import './mock' // simulation data
 
+Vue.use(require('vue-moment'))
+
 import * as filters from './filters' // global filters
 
 Vue.use(Element, {

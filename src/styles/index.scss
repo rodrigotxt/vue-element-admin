@@ -199,3 +199,16 @@ code {
 .multiselect--active {
   z-index: 1000 !important;
 }
+.el-table__row{
+  .actions{
+    opacity: 0.1;
+    transition: 0.5s all;
+    // display: none;
+  }
+  &:hover{
+    .actions{
+      opacity: 1;
+    }
+  }
+
+}
