@@ -7,8 +7,10 @@
 
     <div class="line"/>
     <el-table
+      v-loading="loading"
       :data="tableData"
-      style="width: 100%">
+      style="width: 100%"
+    >
 
       <el-table-column
         prop="razao_social"
@@ -122,7 +124,8 @@ export default {
       form: {},
       upHere: false,
       tableData: [],
-      dataBR: 'DFSDFASDF'
+      dataBR: 'DFSDFASDF',
+      loading: false
     }
   },
   computed: {
@@ -160,12 +163,15 @@ export default {
     },
     getClientes: function() {
       // [nome, razao_social, cnpj, cpf, data_nascimento, email]
+      var self = this
+      this.loading = true
       this.tableData = []
       var data = this.tableData
       localForage.iterate(function(value, key, iterationNumber) {
         data.push(value)
       }).then(function() {
         console.log('Iteration has completed')
+        self.loading = false
       }).catch(function(err) {
         // This code runs if there were any errors
         console.log(err)
