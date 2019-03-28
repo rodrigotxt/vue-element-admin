@@ -53,12 +53,12 @@ const CadastrosRouter = {
       name: 'Patologias',
       meta: { title: 'Patologias' }
     },
-    {
-      path: 'index/tipos-atendimento',
-      component: () => import('@/views/components-demo/dragKanban'),
-      name: 'Tipos de Atendimento',
-      meta: { title: 'Tipos de Atendimento' }
-    },
+    // {
+    //   path: 'index/tipos-atendimento',
+    //   component: () => import('@/views/components-demo/dragKanban'),
+    //   name: 'Tipos de Atendimento',
+    //   meta: { title: 'Tipos de Atendimento' }
+    // },
     {
       path: 'index/exames',
       component: () => import('@/views/components-demo/dragKanban'),

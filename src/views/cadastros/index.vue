@@ -23,6 +23,9 @@
 </template>
 
 <script>
+
+import axios from 'axios'
+
 import tabelaCliente from './tabelas/cliente'
 // import tabelaPadrao from './tabelas/padrao'
 import tabelaEspecie from './tabelas/especie.vue'
@@ -61,7 +64,8 @@ export default {
       localDB: '',
       upHere: false,
       tableData: [],
-      dataBR: 'DFSDFASDF',
+      dataBR: '',
+      appURL: 'http://zoom.local/',
       loading: false,
       tipoCadastro: ''
     }
@@ -103,7 +107,16 @@ export default {
       if (!r) {
         return false
       }
+      self.loading = true
+      axios.delete(self.appURL + self.tipoCadastro + '/' + id).then(function(response) {
+        self.getDados()
+      }).catch(function(error) {
+        console.log(error)
+      }).finally(function() {
+        self.loading = false
+      })
 
+      /*
       // return false;
       self.localDB.removeItem(id).then(function() {
         // location.reload();
@@ -112,10 +125,26 @@ export default {
         self.getDados()
         self.form = {}
       })
+      */
     },
     getForm(row = null, isNew = null) {
       const self = this
       const id = row.row.id
+      this.loading = true
+      axios.get(this.appURL + this.tipoCadastro + '/' + id).then(function(response) {
+        if (isNew) {
+          self.form = []
+        } else {
+          // return console.log(response);
+          self.form = response
+        }
+        self.formVisible = true
+      }).catch(function(error) {
+        console.log(error)
+      })
+        .finally(() => (this.loading = false))
+
+      /*
       self.localDB.getItem(id).then(function(value) {
         if (isNew) {
           self.form = []
@@ -126,6 +155,7 @@ export default {
       }).catch(function(err) {
         console.log('ops', err)
       })
+      */
     },
     formatDate: function(row, column, date) {
       return moment(date).format('DD/MM/YYYY')
@@ -135,6 +165,13 @@ export default {
       console.log('getDados...')
       var self = this
       this.loading = true
+      axios.get(this.appURL + this.tipoCadastro).then(function(response) {
+        self.tableData = response.data
+      }).catch(function(error) {
+        console.log(error)
+      })
+        .finally(() => (this.loading = false))
+      /*
       this.tableData = []
       var data = this.tableData
       self.localDB.iterate(function(value, key, iterationNumber) {
@@ -146,6 +183,7 @@ export default {
         // This code runs if there were any errors
         console.log(err)
       })
+      */
     }
   }
 }

@@ -15,7 +15,7 @@ module.exports = {
 
     // can be overwritten by process.env.HOST
     // if you want dev by ip, please set host: '0.0.0.0'
-    host: 'localhost',
+    host: 'zoom.local',
     port: 9527, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: true,
     errorOverlay: true,
@@ -60,12 +60,12 @@ module.exports = {
      * then assetsPublicPath should be set to "/bar/".
      * In most cases please use '/' !!!
      */
-    assetsPublicPath: '/',
+     assetsPublicPath: '/vue-element-admin/',
 
     /**
      * Source Maps
      */
-    productionSourceMap: false,
+     productionSourceMap: false,
     // https://webpack.js.org/configuration/devtool/#production
     devtool: 'source-map',
 

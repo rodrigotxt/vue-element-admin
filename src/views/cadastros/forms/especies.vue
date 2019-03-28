@@ -2,7 +2,7 @@
   <el-form ref="form" label-width="180px">
     <el-form-item label="Nome da Espécie">
       <el-col :span="12">
-        <el-input v-model="form.name" required="true"/>
+        <el-input v-model="form.nome" required="true"/>
       </el-col>
     </el-form-item>
   </el-form>
