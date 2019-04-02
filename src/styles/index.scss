@@ -212,3 +212,17 @@ code {
   }
 
 }
+
+// font-awesome: Concatenates with '/' between path and font name.
+$fa-font-path: '~font-awesome/fonts';
+$fa-css-prefix: el-icon-fa;
+
+@import '~font-awesome/scss/font-awesome';
+
+[class^='#{$fa-css-prefix}-'], [class*=' #{$fa-css-prefix}-'] {
+  font-family: FontAwesome !important; // override ElementUI's icon font
+}
+
+.w-100{
+  width: 100%;
+}
