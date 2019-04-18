@@ -226,3 +226,12 @@ $fa-css-prefix: el-icon-fa;
 .w-100{
   width: 100%;
 }
+.el-table--enable-row-hover .el-table__body tr:hover > td{
+  background: none;
+}
+.el-table tr{
+  transition: 0.5s all;
+}
+.el-table tr:hover {
+  background: linear-gradient(90deg, #f3f3f3, #d6dee4);
+}

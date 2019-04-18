@@ -9,9 +9,12 @@
     <tabela-cliente v-if="$route.params.tipo == 'clientes'"/>
     <tabela-especie v-if="$route.params.tipo == 'especies'"/>
     <tabela-raca v-if="$route.params.tipo == 'racas'"/>
+    <tabela-exame v-if="$route.params.tipo == 'exames'"/>
 
     <el-dialog :visible.sync="formVisible" title="Editar">
       <form-especies v-if="$route.params.tipo == 'especies'" :form="form"/>
+      <form-raca v-if="$route.params.tipo == 'racas'" :form="form"/>
+      <form-exame v-if="$route.params.tipo == 'exames'" :form="form"/>
       <span slot="footer" class="dialog-footer">
         <el-button @click="formVisible = false">Cancelar</el-button>
         <el-button type="primary" @click="saveDados">Salvar</el-button>
@@ -30,10 +33,13 @@ import tabelaCliente from './tabelas/cliente'
 // import tabelaPadrao from './tabelas/padrao'
 import tabelaEspecie from './tabelas/especie.vue'
 import tabelaRaca from './tabelas/raca.vue'
+import tabelaExame from './tabelas/exame.vue'
 
 /** * Formularios ***/
 import formEspecie from './forms/especies.vue'
 import formCliente from './forms/clientes.vue'
+import formRaca from './forms/raca.vue'
+import formExame from './forms/exames.vue'
 
 import AwesomeMask from 'awesome-mask'
 import localForage from 'localforage'
@@ -53,8 +59,11 @@ export default {
     'tabela-cliente': tabelaCliente,
     'tabela-especie': tabelaEspecie,
     'tabela-raca': tabelaRaca,
+    'tabela-exame': tabelaExame,
     'form-especies': formEspecie,
-    'form-cliente': formCliente
+    'form-cliente': formCliente,
+    'form-raca': formRaca,
+    'form-exame': formExame
   },
   // props: ['tipoCadastro'],
   data() {
@@ -92,6 +101,25 @@ export default {
     saveDados: function() {
       const self = this
       var id = this.form.id
+
+      axios.put(self.appURL + self.tipoCadastro + '/' + id, self.form)
+        .then(function(response) {
+          self.form = {}
+          var pathRoute = '/cadastros/index/' + self.tipoCadastro
+          self.$router.push({ path: pathRoute })
+        })
+        .catch(function(error) {
+          if (error) {
+            self.$alert('Ocorreu um erro ao inserir os dados.', 'Oops', { type: 'error', confirmButtonText: 'OK' })
+          }
+        })
+        .finally(function() {
+          self.formVisible = false
+          self.getDados()
+          self.form = {}
+        })
+
+      /*
       self.localDB.setItem(id, this.form).then(function() {
         // location.reload();
         // vm.$router.push({ path: '/clientes' })
@@ -99,6 +127,7 @@ export default {
         self.getDados()
         self.form = {}
       })
+      */
     },
     removeItem(row) {
       const self = this
@@ -136,7 +165,7 @@ export default {
           self.form = []
         } else {
           // return console.log(response);
-          self.form = response
+          self.form = response.data
         }
         self.formVisible = true
       }).catch(function(error) {

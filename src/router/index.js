@@ -74,8 +74,8 @@ export const constantRouterMap = [
       {
         path: 'dashboard',
         component: () => import('@/views/dashboard/index'),
-        name: 'Dashboard',
-        meta: { title: 'dashboard', icon: 'dashboard', noCache: true, affix: true }
+        name: 'Zoom',
+        meta: { title: 'Painel', icon: 'dashboard', noCache: true, affix: true }
       }
     ]
   },

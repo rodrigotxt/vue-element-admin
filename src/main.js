@@ -9,6 +9,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 import '@/styles/index.scss' // global css
 
+import '@/styles/bootstrap_flaty.min.css' // boostrap custom css
+
 import App from './App'
 import store from './store'
 import router from './router'

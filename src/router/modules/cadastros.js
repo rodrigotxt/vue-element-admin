@@ -37,10 +37,11 @@ const CadastrosRouter = {
     },
     {
       path: 'index/racas',
-      component: () => import('@/views/components-demo/dragKanban'),
+      component: () => import('@/views/cadastros/index'),
       name: 'Raças',
       meta: { title: 'Raças' }
     },
+    /*
     {
       path: 'index/pelagens',
       component: () => import('@/views/components-demo/dragKanban'),
@@ -53,6 +54,7 @@ const CadastrosRouter = {
       name: 'Patologias',
       meta: { title: 'Patologias' }
     },
+    */
     // {
     //   path: 'index/tipos-atendimento',
     //   component: () => import('@/views/components-demo/dragKanban'),
@@ -61,20 +63,23 @@ const CadastrosRouter = {
     // },
     {
       path: 'index/exames',
-      component: () => import('@/views/components-demo/dragKanban'),
+      component: () => import('@/views/cadastros/index'),
       name: 'Exames',
       meta: { title: 'Exames' }
     },
+
     {
-      path: 'index/exames/atributos',
-      component: () => import('@/views/components-demo/dragKanban'),
-      name: 'Atributos Exames',
+      path: 'exames/atributos',
+      component: () => import('@/views/cadastros/exames-atributos'),
+      name: 'Atributos',
+      hidden: true,
       meta: { title: 'Atributos Exames' }
     },
     {
-      path: 'index/exames/referencias',
-      component: () => import('@/views/components-demo/dragKanban'),
-      name: 'Referências Exames',
+      path: 'exames/referencias',
+      component: () => import('@/views/cadastros/exames-referencia'),
+      name: 'Referências',
+      hidden: true,
       meta: { title: 'Referências Exames' }
     },
     {

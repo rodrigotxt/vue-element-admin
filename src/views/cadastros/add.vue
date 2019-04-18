@@ -6,6 +6,7 @@
     </el-menu>
     <el-main>
       <h2>Inserir Novo</h2>
+
       <el-form v-if="tipo == 'especies'" ref="form" :rules="rulesEspecie" :model="form" label-width="180px">
         <el-form-item label="Nome da Espécie" prop="nome">
           <el-col :span="6">
@@ -14,6 +15,7 @@
         </el-form-item>
         <el-button size="large" type="success" @click="saveDados">Salvar</el-button>
       </el-form>
+
       <el-form v-if="tipo == 'racas'" ref="form" :model="form" label-width="180px">
         <el-form-item label="Nome da Raça">
           <el-col :span="6">
@@ -27,6 +29,7 @@
         </el-form-item>
         <el-button size="large" type="success" @click="saveDados">Salvar</el-button>
       </el-form>
+
       <el-form v-if="tipo == 'pelagens'" ref="form" :model="form" label-width="180px">
         <el-form-item label="Nome da Espécie">
           <el-col :span="6">
@@ -35,6 +38,21 @@
         </el-form-item>
         <el-button size="large" type="success" @click="saveDados">Salvar</el-button>
       </el-form>
+
+      <el-form v-if="tipo == 'exames'" ref="form" :model="form" label-width="180px">
+        <el-form-item label="Nome do Exame">
+          <el-col :span="12">
+            <el-input v-model="form.nome" required="true" @keyup.enter.native="saveDados" />
+          </el-col>
+        </el-form-item>
+        <el-form-item label="Descrição">
+          <el-col :span="12">
+            <el-input v-model="form.descricao" />
+          </el-col>
+        </el-form-item>
+        <el-button size="large" type="success" @click="saveDados">Salvar</el-button>
+      </el-form>
+
     </el-main>
   </div>
 </template>
